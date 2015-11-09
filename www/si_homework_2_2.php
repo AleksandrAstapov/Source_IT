@@ -9,14 +9,14 @@
  */
 
 $countries = array(
-    'Turkey' => 'Турция',
-    'Egypt' => 'Египет',
-    'Italy' => 'Италия'
+    'Turkey' => ['Турция', 1],
+    'Egypt' => ['Египет', 1.1],
+    'Italy' => ['Италия', 1.12]
     );
 
 // Начальная форма, которая выводится при пустом $_REQUEST
 if (!isset($_REQUEST['country'])){
-  ?>
+?>
 <!DOCTYPE html>
 <HTML>
   <HEAD> 
@@ -31,9 +31,8 @@ if (!isset($_REQUEST['country'])){
       <select name="country" size="1" style="min-width: 173px;">
         <?php
         foreach ($countries as $key => $val){
-          echo "<option value=\"$key\">$val</option>";
-        }
-        ?>
+          echo "<option value=\"$key\">$val[0]</option>";
+        }?>
       </select>
       <p>
         Длительность поездки, дни:
@@ -59,18 +58,7 @@ $country = $_REQUEST['country'];
 $duration = (int) $_REQUEST['duration'];
 $discount = empty($_REQUEST['discount'])? '':'checked';
 $rate = 400;
-switch ($country){
-  case 'Egypt':
-    $fullPrice = $duration*$rate*1.1;
-    break;
-  case 'Italy':
-    $fullPrice = $duration*$rate*1.12;
-    break;
-  case 'Turkey':
-  default:
-    $fullPrice = $duration*$rate;
-    break;
-}
+$fullPrice = $duration*$rate*$countries[$country][1];
 $price = (empty($discount))? $fullPrice : $fullPrice*0.95;
 
 // Заполненная форма и результат расчета
@@ -90,12 +78,11 @@ $price = (empty($discount))? $fullPrice : $fullPrice*0.95;
         <?php
         foreach ($countries as $key => $val){
           if ($key == $country){
-            echo "<option value=\"$key\" selected>$val</option>";
+            echo "<option value=\"$key\" selected>$val[0]</option>";
           } else {
-            echo "<option value=\"$key\">$val</option>";
+            echo "<option value=\"$key\">$val[0]</option>";
           }
-        }
-        ?>
+        }?>
       </select>
       <p>
         Длительность поездки, дни:
