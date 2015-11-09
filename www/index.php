@@ -28,6 +28,7 @@
         <li><a href="si_lesson_2.php">Второй урок, пример 1</a></li>
         <li><a href="si_lesson_2_2.php">Второй урок, пример 2</a></li>
         <li><a href="si_homework_2_1.php">HomeWork #2_1</a></li>
+        <li><a href="si_homework_2_2.php">HomeWork #2_2 - Туристический калькулятор</a></li>
       </ul>
     </div>
   </BODY>

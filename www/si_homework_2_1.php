@@ -5,7 +5,7 @@
  * Created:     08.11.2015
  * Author:      Aleksandr Astapov
  * Source:      Source IT, PHP Web-development courses, teacher - Evgeniy Nakoneschniy
- * Description: HomeWork #2 - logical operators
+ * Description: HomeWork #2_1 - logical operators
  */
 
 $number = 30;
