@@ -22,7 +22,7 @@ $arPeople = array(
 );
 
 $count = count($arPeople['PEOPLE']);
-$index = 3;
+$index = 0;
 do {
 	echo $arPeople['PEOPLE'][$index]['NAME'],"<br>";
 	$index++;
