@@ -8,61 +8,25 @@
  * Description: HomeWork #2_2 - Tourist trip cost calculator 
  */
 
+$rate = 400;
 $countries = array(
     'Turkey' => ['Турция', 1],
     'Egypt' => ['Египет', 1.1],
     'Italy' => ['Италия', 1.12]
     );
 
-// Начальная форма, которая выводится при пустом $_REQUEST
-if (!isset($_REQUEST['country'])){
-?>
-<!DOCTYPE html>
-<HTML>
-  <HEAD> 
-    <META charset="utf-8">
-    <TITLE>Туристический калькулятор</TITLE>
-  </HEAD>
-  <BODY>
-    <form method="post" action="<?=$_SERVER['PHP_SELF'];?>">
-      <p>
-        Страна, в которую Вы хотите поехать:
-      </p>
-      <select name="country" size="1" style="min-width: 173px;">
-        <?php
-        foreach ($countries as $key => $val){
-          echo "<option value=\"$key\">$val[0]</option>";
-        }?>
-      </select>
-      <p>
-        Длительность поездки, дни:
-      </p>
-      <input type="text" name="duration">
-      <br>
-      <br>
-      <label>
-        <input type="checkbox" name="discount"> У меня есть скидка!
-      </label>
-      <br>
-      <br>
-      <button type="submit"> Вычислить </button>
-    </form>
-  </BODY>
-</HTML>
-  <?php
-  exit();
-}
-
 // Рассчет стоимости
+if (isset($_REQUEST['country'])){
 $country = $_REQUEST['country'];
 $duration = (int) $_REQUEST['duration'];
 $discount = empty($_REQUEST['discount'])? '':'checked';
-$rate = 400;
 $fullPrice = $duration*$rate*$countries[$country][1];
 $price = (empty($discount))? $fullPrice : $fullPrice*0.95;
+} else {
+  $country = $duration = $discount = '';
+};?>
 
-// Заполненная форма и результат расчета
-?>
+ <!--Заполненная форма и результат расчета--> 
 <!DOCTYPE html>
 <HTML>
   <HEAD> 
@@ -82,7 +46,7 @@ $price = (empty($discount))? $fullPrice : $fullPrice*0.95;
           } else {
             echo "<option value=\"$key\">$val[0]</option>";
           }
-        }?>
+        };?>
       </select>
       <p>
         Длительность поездки, дни:
@@ -97,8 +61,6 @@ $price = (empty($discount))? $fullPrice : $fullPrice*0.95;
       <br>
       <button type="submit"> Вычислить </button>
     </form>
-    <p>
-      Стоимость поездки составит <b><?=$price;?></b> грн.
-    </p>
+    <?=(isset($price)) ? "<p>Стоимость поездки составит <b>$price</b> грн.</p>" : '';?>
   </BODY>
 </HTML>
