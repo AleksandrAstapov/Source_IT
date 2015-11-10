@@ -10,23 +10,24 @@
 
 $rate = 400;
 $countries = array(
-    'Turkey' => ['Турция', 1],
-    'Egypt' => ['Египет', 1.1],
-    'Italy' => ['Италия', 1.12]
+    'Turkey' => array('Турция', 1),
+    'Egypt' => array('Египет', 1.1),
+    'Italy' => array('Италия', 1.12)
     );
 
 // Рассчет стоимости
 if (isset($_REQUEST['country'])){
 $country = $_REQUEST['country'];
 $duration = (int) $_REQUEST['duration'];
-$discount = empty($_REQUEST['discount'])? '':'checked';
+$discount = isset($_REQUEST['discount']) ? 'checked' : '';
 $fullPrice = $duration*$rate*$countries[$country][1];
-$price = (empty($discount))? $fullPrice : $fullPrice*0.95;
+$price = $discount ? $fullPrice*0.95 : $fullPrice;
 } else {
-  $country = $duration = $discount = '';
-};?>
+  $country = $duration = $discount = $price = '';
+}
+?>
 
- <!--Заполненная форма и результат расчета--> 
+<!--Заполненная форма и результат расчета--> 
 <!DOCTYPE html>
 <HTML>
   <HEAD> 
@@ -39,28 +40,25 @@ $price = (empty($discount))? $fullPrice : $fullPrice*0.95;
         Страна, в которую Вы хотите поехать:
       </p>
       <select name="country" size="1" style="min-width: 173px;">
-        <?php
-        foreach ($countries as $key => $val){
-          if ($key == $country){
-            echo "<option value=\"$key\" selected>$val[0]</option>";
-          } else {
-            echo "<option value=\"$key\">$val[0]</option>";
-          }
-        };?>
+        <?php foreach ($countries as $key => $val): ?>
+        <option value="<?=$key;?>" <?=($key == $country) ? 'selected' : '';?>>
+          <?=$val[0];?>
+        </option>
+        <?php endforeach;?>
       </select>
       <p>
         Длительность поездки, дни:
       </p>
       <input type="text" name="duration" value="<?=$duration;?>">
-      <br>
-      <br>
-      <label>
-        <input type="checkbox" name="discount" <?=$discount;?>> У меня есть скидка!
-      </label>
-      <br>
-      <br>
+      <p>
+        <label>
+          <input type="checkbox" name="discount" <?=$discount;?>> У меня есть скидка!
+        </label>
+      </p>
       <button type="submit"> Вычислить </button>
     </form>
-    <?=(isset($price)) ? "<p>Стоимость поездки составит <b>$price</b> грн.</p>" : '';?>
+    <?php if ($price): ?>
+    <p>Стоимость поездки составит <b><?=$price;?></b> грн.</p>
+    <?php endif;?>
   </BODY>
 </HTML>
