@@ -31,5 +31,11 @@
         <li><a href="si_homework_2_2.php">HomeWork #2_2 - Туристический калькулятор</a></li>
       </ul>
     </div>
+    <div>
+      <p>Занятие №3</p>
+      <ul>
+        <li><a href="si_lesson_3_1.php">Третий урок, пример 1</a></li>
+      </ul>
+    </div>
   </BODY>
 </HTML>
