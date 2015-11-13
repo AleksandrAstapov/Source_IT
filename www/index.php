@@ -34,7 +34,8 @@
     <div>
       <p>Занятие №3</p>
       <ul>
-        <li><a href="si_lesson_3_1.php">Третий урок, пример 1</a></li>
+        <li><a href="si_lesson_3_1.php">Третий урок</a></li>
+        <li><a href="si_homework_3_1.php">HomeWork #3 - Процентный множитель</a></li>
       </ul>
     </div>
   </BODY>
