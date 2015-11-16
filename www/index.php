@@ -38,5 +38,12 @@
         <li><a href="si_homework_3_1.php">HomeWork #3 - Процентный множитель</a></li>
       </ul>
     </div>
+    <div>
+      <p>Занятие №4</p>
+      <ul>
+        <li><a href="si_lesson_4_1.php">Четвёртый урок</a></li>
+        <li><a href="si_homework_4_1.php">HomeWork #4 - Рекурсия</a></li>
+      </ul>
+    </div>
   </BODY>
 </HTML>

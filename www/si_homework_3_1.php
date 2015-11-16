@@ -15,7 +15,7 @@ $multiplierPercent = isset($_REQUEST['percent']) ? $_REQUEST['percent'] : '';
 $errorString = '';
 
 // Расчет
-if ($paramsList && $multiplierPercent){
+if ($paramsList && isset($multiplierPercent)){
   $paramsArray = explode(',', $paramsList);
   $resultArray = array_each_multiplier($paramsArray, $multiplierPercent, $errorString);
   if ($resultArray){
@@ -25,7 +25,7 @@ if ($paramsList && $multiplierPercent){
 
 // Функции
 function array_each_multiplier($inputArray, $multiplier=50, &$errorString=''){
-  if ($multiplier > 0){
+  if ($multiplier >= 0){
     $multiplier /= 100;
   } else {
     $errorString .= "Ошибка! Передано отрицательное значение множителя ";
