@@ -45,5 +45,13 @@
         <li><a href="si_homework_4_1.php">HomeWork #4 - Рекурсия</a></li>
       </ul>
     </div>
+    <div>
+      <p>Занятие №5</p>
+      <ul>
+        <li><a href="si_lesson_5_1.php">Пятый урок</a></li>
+        <li><a href="si_homework_5_1.php">HomeWork #5_1 - Редактор</a></li>
+        <li><a href="si_homework_5_2.php">HomeWork #5_2 - Редактор с выбором</a></li>
+      </ul>
+    </div>
   </BODY>
 </HTML>

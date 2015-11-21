@@ -42,3 +42,34 @@ function sum_array($ar1,$ar2){
 	}
 	return $arResult;
 }
+
+
+//2015-11-18
+function read_str_file($path){
+	if (file_exists($path)){
+		$fp = fopen($path, 'rb');
+		$text = fgets($fp);
+		fclose($fp);
+		return $text;
+	} else {
+		return "Файл с именем <b>$path</b> не существует";
+	}
+}
+
+function read_all_file($path){
+	if (file_exists($path)){
+		$fp = fopen($path, 'rb');
+		$chars = '';
+		while (!feof($fp)){
+			$char = fgetc($fp);
+			$char .= fgetc($fp);
+			if ($char != 'а'){
+				$chars .= $char;
+			}
+		}
+		fclose($fp);
+		return $chars;
+	} else {
+		return "Файл с именем <b>$path</b> не существует";
+	}
+}

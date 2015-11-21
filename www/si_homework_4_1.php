@@ -10,7 +10,7 @@
 
 
 // Инициализация переменных
-//$digits = '2306';
+//$digits = '27306';
 $digits = isset($_REQUEST['digits']) ? $_REQUEST['digits'] : '';
 $errorString = '';
 $maxDidit = maxdig($digits,$errorString);
