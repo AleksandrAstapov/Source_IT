@@ -53,5 +53,24 @@
         <li><a href="si_homework_5_2.php">HomeWork #5_2 - Редактор с выбором</a></li>
       </ul>
     </div>
+    <div>
+      <p>Занятие №6</p>
+      <ul>
+        <li><a href="si_lesson_6_1.html">Шестой урок</a></li>
+      </ul>
+    </div>
+    <div>
+      <p>Занятие №7</p>
+      <ul>
+        <li><a href="si_lesson_7_1.php">Седьмой урок</a></li>
+        <li><a href="si_homework_7_1.php">HomeWork #7_1 - Математические функции</a></li>
+      </ul>
+    </div>
+    <div>
+      <p>Занятие №8</p>
+      <ul>
+        <li><a href="si_lesson_8_1.php">Восьмой урок</a></li>
+      </ul>
+    </div>
   </BODY>
 </HTML>
