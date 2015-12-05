@@ -1,0 +1,36 @@
+
+/*
+ * ДЗ. вывести на экран список директорий и файлов в виде ссылок. 
+ * при клике на ссылку директории я могу видеть поддиректории тоже в виде ссылок. 
+ * плюс добавить кнопки создать файл и создать директорию. 
+ * при клике на файл выводить на отдельной странице содержимое этого файла... 
+ * желательно все разбить на функции по логике действий. 
+ * говорю сразу что потребуеться нексолько пхп файлов
+ */
+
+.tree {
+  background-color: white;
+  border: solid silver 1px;
+  padding: 15px;
+}
+.tree a.mark {
+  background-color: lightgrey;
+  border: solid grey 1px;
+  display: inline-block;
+  font-size: small;
+  height: 13px;
+  padding: 0px;
+  text-align: center;
+  vertical-align: baseline;
+  width: 13px;
+}
+.tree a.checked {
+  font-weight: bold;
+  color: darkred;
+}
+a {
+  text-decoration: none;
+}
+body {
+  background-color: azure;
+}

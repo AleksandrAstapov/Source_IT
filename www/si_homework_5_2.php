@@ -68,9 +68,6 @@ function open_file($dir, $fileName){
   if (!$fileName){
     error_message("Файл не выбран");
   }
-  if ($fileName == $_REQUEST['current']){
-    error_message("Файл $fileName уже открыт");
-  }  
   $dirW = iconv('UTF-8', 'CP1251', $dir);
   $fileW = iconv('UTF-8', 'CP1251', $fileName);
   if (!is_file("$dirW/$fileW")){
@@ -106,12 +103,12 @@ function error_message($msg){
     <META charset="utf-8">
     <TITLE>Редактор</TITLE>
   </HEAD>
-  <BODY>
-    <form method="POST">
+  <BODY style="background-color: azure">
+    <h4><?=$title?></h4>
+    <form method="POST" style="width: 100%">
       <input type="hidden" name="dir" value="<?=$dirRel?>">
       <input type="hidden" name="current" value="<?=$fileName?>">
       <div>
-        <h4><?=$title?></h4>
         <p>
           <button type="submit" name="action" value="" formtarget="<?=$target?>">
             Новый
@@ -158,7 +155,7 @@ function error_message($msg){
         </p>  
       </div>
       <div>
-        <textarea name="textarea" style="width: 500px; height: 500px"><?=$textarea;?>
+        <textarea name="textarea" style="width: 100%; min-height: 700px"><?=$textarea;?>
         </textarea>
       </div>
     </form>

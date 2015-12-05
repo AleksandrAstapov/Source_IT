@@ -1,0 +1,8 @@
+*/bower_components/*
+*/node_components/*
+.settings
+.project
+/nbproject/*
+/HomeWorks/*
+/access.log
+/com-error.log
