@@ -43,9 +43,10 @@ class Session {
     }
   }
   
-  public function dirListBuilder($pathname = '.', $left = 5){
+  public function dirListBuilder($pathname = '.', $left = 0){
     $pathnameW = iconv('UTF-8', 'CP1251', $pathname);
     $dirList = scandir($pathnameW);
+    //
     foreach ($dirList as $itemW):
       if (is_dir("$pathnameW/$itemW")):
         if ($itemW === '.' || $itemW === '..'){
@@ -55,7 +56,7 @@ class Session {
         if (in_array("$pathname/$item", $this->openDirList)){
           $action = 'dropup';
           $mark = '-';
-        } else{
+        } else {
           $action = 'dropdown';
           $mark = '+';
         }
@@ -78,6 +79,7 @@ class Session {
         }
       endif;
     endforeach;
+    //
     foreach ($dirList as $itemW):
       if (is_file("$pathnameW/$itemW")):
         $item = iconv('CP1251', 'UTF-8', $itemW);

@@ -18,33 +18,33 @@ foreach ($requestVar as $val){
 $objSession = new Session($dir);
 
 switch ($action){
+  case 'deldir':
+    if ($dir){
+      deleteDir($dir);
+      $dir = dirname($dir);
+    }
+    $objSession->dropdown($dir);
+    break; 
   case 'newdir':
     $dir = ($dir) ? "$dir/$nevDirName" : "./$nevDirName";
-    if (!is_dir($dir)){
-      mkdir($dir, 0777);
+    $dirW = iconv('UTF-8', 'CP1251', $dir);
+    if (!is_dir($dirW)){
+      mkdir($dirW, 0777);
     }
+    $objSession->dropdown($dir);
+    break;
   case 'dropdown':
     $objSession->dropdown($dir);
     break;
   case 'dropup':
     $objSession->dropup($dir);
     break;
-  case 'deldir':
-    if ($dir){
-      deleteDir($dir);
-      $dir = dirname($dir);
-    }
   default:
-    $objSession->dropdown($dir);
     break;
 }
 
 function deleteDir($dir, $charset='UTF-8'){
-  if ($charset === 'CP1251'){
-    $dirW = $dir;
-  } else {
-    $dirW = iconv($charset, 'CP1251', $dir);
-  }
+  $dirW = ($charset === 'CP1251') ? $dir : iconv($charset, 'CP1251', $dir);
   if (!is_dir($dirW)){
     return;
   }
@@ -85,12 +85,12 @@ function deleteDir($dir, $charset='UTF-8'){
           <input type="text" name="nevDirName" placeholder="Имя каталога">
         </p>
         <p>
-          Текущий каталог <em><?= $_SERVER['SERVER_NAME'].'/'.trim($dir, './ ').'/'; ?></em>
+          Текущий каталог <em><?= $_SERVER['SERVER_NAME'].'/'.trim($dir, './ ').'/' ?></em>
         </p> 
       </div>
       <div class="tree">
-        <a class="<?= ($dir) ? '' : 'checked'; ?>" href="<?=$_SERVER['PHP_SELF'];?>">
-          <?=$_SERVER['SERVER_NAME'];?>
+        <a class="<?= ($dir) ? '' : 'checked' ?>" href="<?= $_SERVER['PHP_SELF'] ?>">
+          <?= $_SERVER['SERVER_NAME'] ?>
         </a>
         <br>
         <?php $objSession->dirListBuilder(); ?>
