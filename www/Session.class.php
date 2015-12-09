@@ -16,11 +16,7 @@ class Session {
   
   public function __construct($dir='') {
     session_start();
-    if (empty($_SESSION['openDirList'])){
-      $this->openDirList = array();
-    } else {
-      $this->openDirList = $_SESSION['openDirList'];
-    }
+    $this->openDirList = empty($_SESSION['openDirList']) ? array() : $_SESSION['openDirList'];
     $this->currentDir = $dir;
   }
   

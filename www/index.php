@@ -71,5 +71,10 @@
         <li><a href="si_lesson_9_1.php">Девятый урок</a></li>
       </ul>
       
+      <p>Занятие №10</p>
+      <ul>
+        <li><a href="si_lesson_10_1.php">Десятый урок</a></li>
+      </ul>
+
   </BODY>
 </HTML>

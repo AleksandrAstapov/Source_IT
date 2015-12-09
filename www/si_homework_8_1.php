@@ -11,7 +11,7 @@
 
 include_once 'Session.class.php';
 
-$requestVar = array('action', 'dir', 'newdir', 'nevDirName');
+$requestVar = array('action', 'dir', 'nevDirName');
 foreach ($requestVar as $val){
   $$val = isset($_REQUEST[$val]) ? $_REQUEST[$val] : '';
 }
