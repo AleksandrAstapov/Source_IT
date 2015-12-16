@@ -74,6 +74,13 @@
       <p>Занятие №10</p>
       <ul>
         <li><a href="si_lesson_10_1.php">Десятый урок</a></li>
+        <li><a href="si_homework_10.php">HomeWork #10 - Расчет скорости</a></li>
+      </ul>
+
+      <p>Занятие №11</p>
+      <ul>
+        <li><a href="si_lesson_11_1.php">Одиннадцатый урок, часть 1</a></li>
+        <li><a href="si_lesson_11_2.php">Одиннадцатый урок, часть 2</a></li>
       </ul>
 
   </BODY>
