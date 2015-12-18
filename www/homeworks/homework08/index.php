@@ -9,7 +9,7 @@
  * говорю сразу что потребуеться нексолько пхп файлов
  */
 
-include_once 'Session.class.php';
+include_once 'CSession.class.php';
 
 $requestVar = array('action', 'dir', 'nevDirName');
 foreach ($requestVar as $val){
@@ -63,7 +63,7 @@ function deleteDir($dir, $charset='UTF-8'){
 
 <HTML>
   <HEAD>
-    <LINK rel="stylesheet" href="si_homework_8_1.css">
+    <LINK rel="stylesheet" href="si_homework_8.css">
     <META charset="utf-8">
     <TITLE>Файловый менеджер</TITLE>
   </HEAD>
@@ -73,7 +73,7 @@ function deleteDir($dir, $charset='UTF-8'){
       <input type="hidden" name="dir" value="<?=$dir?>">
       <div>
         <p>
-          <button type="submit" name="action" value="" formaction="si_homework_5_2.php" formtarget="_blank">
+          <button type="submit" name="action" value="" formaction="../homework05/si_homework_5_2.php" formtarget="_blank">
             Новый файл
           </button>
           <button type="submit" name="action" value="deldir">
@@ -93,7 +93,7 @@ function deleteDir($dir, $charset='UTF-8'){
           <?= $_SERVER['SERVER_NAME'] ?>
         </a>
         <br>
-        <?php $objSession->dirListBuilder(); ?>
+        <?php $objSession->dirListBuilder('../../'); ?>
       </div>
     </form>
   </BODY>

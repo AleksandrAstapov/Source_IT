@@ -81,7 +81,7 @@ class Session {
         $item = iconv('CP1251', 'UTF-8', $itemW);
         $itemU = urlencode($item);
         $pathnameU = urlencode($pathname);
-        $href = "si_homework_5_2.php?action=open_file&dir=$pathnameU&file=$itemU";
+        $href = "../homework05/si_homework_5_2.php?action=open_file&dir=$pathnameU&file=$itemU";
         ?>
           <a href="<?=$href?>" target="_blank" style="margin-left:<?=$left?>px">
             <?=$item?>

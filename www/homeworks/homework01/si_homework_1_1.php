@@ -1,19 +1,19 @@
 <?php
 /*
- * Filename:    si_homework_2_1.php
+ * Filename:    si_homework_1.php
  * Type:        PHP Document
- * Created:     08.11.2015
+ * Created:     06.11.2015
  * Author:      Aleksandr Astapov
  * Source:      Source IT, PHP Web-development courses, teacher - Evgeniy Nakoneschniy
- * Description: HomeWork #2_1 - logical operators
+ * Description: HomeWork #1 - creating variables and use echo function
  */
 
-$number = 30;
-$number = ($number > 10) ? $number + 100 : $number - 30;
-echo $number;    
-    
-//html_header("HomeWork #2");
-//html_footer();
+$name = "Александр";
+$age = 28;
+html_header("HomeWork #1");
+echo "<p>Меня зовут $name</p>";
+printf("<p>Мне %d лет</p>", $age);
+html_footer();
 
 function html_header($title='No title', $css_file='', $js_file='', $prepend=''){
   header('Content-Type: text/html;charset=utf-8');

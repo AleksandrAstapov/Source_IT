@@ -1,19 +1,16 @@
 <?php
 /*
- * Filename:    si_homework_1.php
+ * Filename:    si_homework_2_1.php
  * Type:        PHP Document
- * Created:     06.11.2015
+ * Created:     08.11.2015
  * Author:      Aleksandr Astapov
  * Source:      Source IT, PHP Web-development courses, teacher - Evgeniy Nakoneschniy
- * Description: HomeWork #1 - creating variables and use echo function
+ * Description: HomeWork #2_1 - logical operators
  */
 
-$name = "Александр";
-$age = 28;
-html_header("HomeWork #1");
-echo "<p>Меня зовут $name</p>";
-printf("<p>Мне %d лет</p>", $age);
-html_footer();
+$number = 30;
+$number = ($number > 10) ? $number + 100 : $number - 30;
+echo $number;    
 
 function html_header($title='No title', $css_file='', $js_file='', $prepend=''){
   header('Content-Type: text/html;charset=utf-8');
@@ -38,11 +35,3 @@ function html_footer($append=''){
 </HTML>
 <?php
 }
-
-/*
- * Useful links:
- * http://htmlbook.ru/samhtml/struktura-html-koda
- * http://htmlbook.ru/html/head
- * http://php.net/manual/ru/function.header.php
- * https://ru.wikipedia.org/wiki/Список_заголовков_HTTP
- */

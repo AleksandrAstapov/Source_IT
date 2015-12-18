@@ -77,14 +77,3 @@ function html_footer($append=''){
 </HTML>
 <?php
 }
-
-/*
- * Useful links:
- * http://htmlbook.ru/samhtml/struktura-html-koda
- * http://htmlbook.ru/html/head
- * http://htmlbook.ru/html/form
- * http://htmlbook.ru/html/input
- * http://php.net/manual/ru/function.header.php
- * http://php.net/manual/ru/function.setcookie.php
- * https://ru.wikipedia.org/wiki/Список_заголовков_HTTP
- */
