@@ -12,12 +12,11 @@
 class CMoney {
   public $currency;
   public $currencyList = array();
-  protected $file = './money2.csv';
   public $name;
   public $purchase;
   public $sale;
-  public function __construct() {
-    $fp = fopen($this->file, 'rb');
+  public function __construct($file) {
+    $fp = fopen($file, 'rb');
     while (!feof($fp)) {
       $moneyArray = fgetcsv($fp);
       $this->currencyList[] = $moneyArray[0];
@@ -26,6 +25,7 @@ class CMoney {
         $this->sale = $moneyArray[2];
       }
     }
+    fclose($fp);
   }
   public function display(){
     ?>
@@ -70,5 +70,5 @@ class CMoneyRUB extends CMoney {
 }
 
 $class = filter_input(0, 'currency') ? 'CMoney'.filter_input(0, 'currency') : 'CMoneyUSD';
-$objMoney = new $class;
+$objMoney = new $class('./money2.csv');
 $objMoney->display();
