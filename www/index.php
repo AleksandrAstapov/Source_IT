@@ -83,6 +83,11 @@
         <li><a href="si_lesson_11_2.php">Одиннадцатый урок, часть 2</a></li>
         <li><a href="/homeworks/homework11/index.php">HomeWork #11 - Курс валют</a></li>
       </ul>
+      
+      <p>Занятие №12</p>
+      <ul>
+        <li><a href="si_lesson_12.php">Двеннадцатый урок</a></li>
+      </ul>
 
   </BODY>
 </HTML>
