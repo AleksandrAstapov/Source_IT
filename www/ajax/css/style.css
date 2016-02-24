@@ -1,0 +1,10 @@
+.form{
+    width: 40%;
+}
+.textarea{
+    resize: none;
+}
+.table-width{
+    width: 70%;
+    margin-top: 20px;
+}

@@ -86,7 +86,18 @@
       
       <p>Занятие №12</p>
       <ul>
-        <li><a href="si_lesson_12.php">Двеннадцатый урок</a></li>
+        <li><a href="si_lesson_12_1.php">Двеннадцатый урок, часть 1</a></li>
+        <li><a href="si_lesson_12_2.php">Двеннадцатый урок, часть 2</a></li>
+      </ul>
+      
+      <p>Занятие 2016-01-20</p>
+      <ul>
+        <li><a href="./ajax/index.php">2016-01-20</a></li>
+      </ul>
+            
+      <p>Занятие 2016-02-06</p>
+      <ul>
+        <li><a href="si_lesson_2016-02-06.php">2016-02-06</a></li>
       </ul>
 
   </BODY>
